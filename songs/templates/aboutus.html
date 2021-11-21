@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+.about{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about .content img{
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid rgba(0,0,0,0.25);
+}
+.text{
+    width: 550px;
+    max-width: 100%;
+    padding: 0 10px;
+}
+.content{
+    width: 1280px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.text h1{
+    color: #2196f3;
+    font-size: 85px;
+    text-transform: capitalize;
+}
+.text h5{
+    color: white;
+    font-size: 25px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+.text p{
+    color: #c0c4d6;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    margin-bottom: 45px;
+}
+@media screen and (max-width: 1180px){
+    .about{
+        width: 100%;
+        height: auto;
+        padding: 70px 0px;
+    }
+}
+@media screen and (max-width: 650px){
+    .about .content img{
+        margin-bottom: 35px;
+    }
+    .text h1{
+        font-size: 60px;
+        margin-bottom: 25px;
+    }
+}
+</style>
+</head>
+<body>
+<section class="about">
+    <div class="content">
+        <img src="media/mypic.jpg">
+        <div class="text">
+            <h1>About Us</h1>
+            <h5>Web Application Developer</h5>
+            <p>I am a Full Stack Web Developer.I can provide clean code  and perfect design.
+            I Built the websites more & more interactive with web animation.
+            A responsive design makes your website accessible to all users, regardless of their device.</p>
+            <a href="" class="btn">Hire Me &#8594;</a>
+        </div>
+    </div>
+</section>
+</body>
+
+{% endblock %}

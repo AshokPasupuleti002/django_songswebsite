@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+h3{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 770px;
+    padding-right: 200px;
+    color: #555;
+    font-weight: normal;
+    font-size: 50px;
+    font-weight: bold;
+}
+</style>
+<div class="container-fluid" >
+        <h3 class="title">Audio Songs</h3>
+        <table width = 100% border = 1 >
+
+                {% for i in alist %}
+
+                <tr>
+                        <td width = 50%>
+                                Movie = {{ i.movie.title }} <br>
+                                Director = {{ i.movie.director }} <br>
+                                Year of release = {{ i.movie.year }} <br>
+                                <img src = "{{ i.movie.photo.url }}" width="150" height="150" />
+                        </td>
+
+                        <td width = 50%>
+                                Title = {{ i.title }} <br>
+                                Genre = {% if i.genre == 'H' %} Happy
+                                {% elif i.genre == 'D' %} Devotional
+                                {% elif i.genre == 'S' %} Sad
+                                {% elif i.genre == 'C' %} Classic
+                                {% else %} Melody
+                                {% endif %} <br>
+                                <! code for playing or downloading the song>
+                                <div style = "text-align:center">
+                                        <audio controls width=300 height=200 >
+                                                <source src = "media/{{ i.song }}"/>
+                                        </audio>
+
+                                        <a href = "/media/{{ i.song }}" download> <br>
+                                                <button>Download audio</button>
+                                        </a>
+                                </div>
+
+                        </td>
+                </tr>
+
+                {% endfor %}
+
+        </table>
+</div>
+{% endblock %}

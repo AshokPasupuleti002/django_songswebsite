@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>List Of Available Movies</h3>
+
+{%  for i in mlst %}
+
+<li>{{ i }}</li><br>
+
+{% endfor %}
+
+{% endblock %}

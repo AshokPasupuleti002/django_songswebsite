@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class = "container-fluid">
+
+        <h4>video songs</h4>
+
+        {% for i in vlst %}
+
+        {% if m.title == i.movie.title %}
+
+        {% endif %}
+
+        <li> {{ i.title }} </li>
+
+        {% endfor %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container-fluid" >
+    <h3 style = "text-align.center" ; >Search_list</h3>
+    <table width = 100% border = 1 ></table>
+    {% for i in m1 %}
+    Movie = {{ i.title }}<br>
+    Director = {{ i.director }}<br>
+    Year = {{ i.year }}<br>
+    {% endfor %} <br>
+
+    {% for i in m2 %}
+    Audio = {{ i.title }}<br>
+    Movie = {{ i.movie.title }}<br>
+    Director = {{ i.movie.director }}<br>
+    {% endfor %} <br>
+
+    {% for i in m3 %}
+    Video = {{ i.title }}<br>
+    Movie = {{ i.movie.title }}<br>
+    Director = {{ i.movie.director }}<br>
+    {% endfor %} <br>
+</div>
+{% endblock %}
+
